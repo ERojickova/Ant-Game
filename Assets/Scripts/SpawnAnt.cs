@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnAnt : MonoBehaviour
 {
     public GameObject antPrefab;
-    public Vector3 spawnPosition;
+    private Vector3 spawnPosition;
     public Quaternion spawnRotation;
     public float delay;
     public int numberOfAnts;
@@ -13,6 +13,7 @@ public class SpawnAnt : MonoBehaviour
 
     void Start()
     {
+        spawnPosition = transform.position;
         StartCoroutine(SpawnAntWithDelay());
     }
 

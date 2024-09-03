@@ -1,33 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class AntMovement : MonoBehaviour
+public class DiggingDown : MonoBehaviour
 {
-    public float speed = 2f;
-    private bool isFacingRight = false;
-    public int role = 0; // -1 = in_progress, 0 = walking, 1 = mining down
+    // Start is called before the first frame update
+    private bool isActivated = false;
     private float antLenght = 1.2f;
     private List<PolygonCollider2D> collidersToShrinkInY = new();
     private List<PolygonCollider2D> collidersToRemove = new();
-    public float diggingSpeed = 0.0001f;
+    private List<GameObject> holesToGrow = new();
+    public float diggingSpeed = 0.001f;
+    public GameObject holeMaskPrefab;
 
-    // Start is called before the first frame update
+    private AntMovement antMovementScript;
     void Start()
     {
-        
+        antMovementScript = GetComponent<AntMovement>();
     }
 
-
+    // Update is called once per frame
     void Update()
     {
-        Vector3 movement_vector = Vector3.left;
-        if (isFacingRight)
+        if (Input.GetMouseButtonDown(0) && antMovementScript.role != -1)
         {
-            movement_vector = Vector3.right;
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+
+            if (hit.collider != null && hit.collider.name == gameObject.name)
+            {
+                antMovementScript.speed = 0f;
+                isActivated = true;
+                antMovementScript.role = -1;
+            }
+            
         }
-        
-        transform.Translate(movement_vector * speed * Time.deltaTime);
 
         // Shrinking collider:
         foreach (PolygonCollider2D collider2D in collidersToShrinkInY) {
@@ -41,8 +49,22 @@ public class AntMovement : MonoBehaviour
                 // collider2D.enabled = false;
                 // Destroy(collider2D);
                 collidersToRemove.Add(collider2D);
+                antMovementScript.role = 0;
+                antMovementScript.speed = 2f;
             }
         }
+
+        foreach (GameObject hole in holesToGrow)
+        {
+            Vector3 oldSize = hole.transform.localScale;
+            oldSize.y += ((diggingSpeed * 3.1f) * Time.deltaTime);
+            hole.transform.localScale = oldSize;
+
+            Vector3 oldPosition = hole.transform.position;
+            oldPosition.y -= ((diggingSpeed * 1.55f) * Time.deltaTime);
+            hole.transform.position = oldPosition;
+        }
+        
 
         foreach (PolygonCollider2D collider2D in collidersToRemove)
         {
@@ -51,54 +73,21 @@ public class AntMovement : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Obstacle")
-        {
-            foreach (ContactPoint2D contact in collision.contacts)
-            {
-                Vector2 normal = contact.normal;
-                if (normal == Vector2.left || normal == Vector2.right) {
-                    Flip();
-                    break;
-                }
-            }
-        }
-    }
-
-    void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") && role == 1)
+        if (collision.gameObject.CompareTag("Obstacle") && isActivated)
         {
-            role = -1;
-            speed = 0.0f;
-            Debug.Log("Player is standing on: " + collision.gameObject.name);
-            Debug.Log("Player's position: " + transform.position);
+            isActivated = false;
+            Debug.Log("Starting digging");
             PolygonCollider2D polygonCollider2D = collision.collider.GetComponent<PolygonCollider2D>();
-            // Debug.Log("PolygonCollider2D points:");
-            // for (int i = 0; i < polygonCollider2D.points.Length; i++)
-            // {
-            //     Debug.Log("Point " + i + ": " + polygonCollider2D.points[i]);
-            // }
-            
-            // Vector3 playerWorldPosition = transform.position;
-            // Vector3 playerLocalPosition = polygonCollider2D.transform.InverseTransformPoint(playerWorldPosition);
-            // Debug.Log("Player Local Position relative to PolygonCollider2D: " + playerLocalPosition);
-
             StartDiggingDown(polygonCollider2D, collision.gameObject);
         }
     }
 
     void StartDiggingDown(PolygonCollider2D pcLeft, GameObject ground)
     {
+        Debug.Log(ground.name);
         PolygonCollider2D pcRight = ground.AddComponent<PolygonCollider2D>();
 
         Vector3 playerLeftWorldPosition = transform.position;
@@ -134,11 +123,11 @@ public class AntMovement : MonoBehaviour
 
         PolygonCollider2D pcMiddle = ground.AddComponent<PolygonCollider2D>();
         pcMiddle.points = newPointsMiddle;
+        Vector3 newHolePosition = transform.position;
+        newHolePosition.y += 0.3f;
+        GameObject newHole = Instantiate(holeMaskPrefab, newHolePosition, Quaternion.identity);
 
         collidersToShrinkInY.Add(pcMiddle);
+        holesToGrow.Add(newHole);
     }
-
-    
-    
-
 }

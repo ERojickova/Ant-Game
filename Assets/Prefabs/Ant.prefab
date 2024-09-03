@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -8849417123485726887, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8849417123485726887, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
+      objectReference: {fileID: 0}
     - target: {fileID: -8653719598885068355, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
       value: Ant
@@ -23,6 +31,14 @@ PrefabInstance:
     - target: {fileID: -8653719598885068355, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8320481939255083305, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8320481939255083305, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_LocalScale.x
@@ -107,6 +123,14 @@ PrefabInstance:
     - target: {fileID: -6551915357139312317, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -6247737471543479666, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6247737471543479666, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
       objectReference: {fileID: 0}
     - target: {fileID: -6232030230985564245, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
@@ -236,9 +260,41 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 720316555322149100, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 720316555322149100, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
+      objectReference: {fileID: 0}
     - target: {fileID: 816403993388250194, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 816403993388250194, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 816403993388250194, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
+      objectReference: {fileID: 0}
+    - target: {fileID: 894440624092718543, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 894440624092718543, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109739508753158995, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109739508753158995, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
       objectReference: {fileID: 0}
     - target: {fileID: 1390636508478387170, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
@@ -247,6 +303,14 @@ PrefabInstance:
     - target: {fileID: 1390636508478387170, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695259586655841621, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695259586655841621, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
       objectReference: {fileID: 0}
     - target: {fileID: 1942141775699396800, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
@@ -304,6 +368,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4765244923812151313, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4765244923812151313, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
+      objectReference: {fileID: 0}
     - target: {fileID: 4782288820212733453, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
       value: leg_back_1
@@ -319,6 +391,14 @@ PrefabInstance:
     - target: {fileID: 5252269186182202041, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362435131454363216, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5362435131454363216, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1543712655
       objectReference: {fileID: 0}
     - target: {fileID: 6607891869252776383, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_Name
@@ -511,3 +591,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12dc57183222cf40aa9e511e3667496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  role: 0
+  diggingSpeed: 0.0001

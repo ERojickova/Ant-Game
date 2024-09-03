@@ -43,3 +43,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2734413253
+    locked: 0
+  - name: HolesBackground
+    uniqueID: 3994568355
+    locked: 0
+  - name: Ants
+    uniqueID: 2751254641
+    locked: 0
+  - name: Enviroment
+    uniqueID: 394713217
+    locked: 0
+  - name: UI
+    uniqueID: 2844993269
+    locked: 0
