@@ -19,10 +19,11 @@ public class SpawnAnt : MonoBehaviour
 
     IEnumerator SpawnAntWithDelay()
     {
-        for (int i = 0; i < numberOfAnts - 1; i++)
+        for (int i = 1; i < numberOfAnts; i++)
         {
             yield return new WaitForSeconds(delay);
-            Instantiate(antPrefab, spawnPosition, spawnRotation);
+            GameObject antClone = Instantiate(antPrefab, spawnPosition, spawnRotation);
+            antClone.name = "Ant_" + i;
         }
     }
 }

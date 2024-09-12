@@ -618,7 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311ce21c097869d41ae8642a514c5843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.5
+  moveSpeed: 4
+  leftBound: -12
+  rightBound: 12
 --- !u!1001 &812548985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1763,7 +1765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3374f2e86f7da4a97b42e9c9acf085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  diggingSpeed: 0.1
   diggingSpeedWorld: 0.5
   holeMaskPrefab: {fileID: 3466225228865174700, guid: 3c41843920419774bbece419ad0f9caa, type: 3}
 --- !u!224 &1526898569 stripped

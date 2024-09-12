@@ -23,7 +23,6 @@ public class DiggingDown : MonoBehaviour
     private float antLenght = 1.8f;
     private List<ColliderMaskPair> colMskList = new();
     private List<ColliderMaskPair> colMskListToRemove = new();
-    public float diggingSpeed = 0.001f;
     public float diggingSpeedWorld = 0.3f;
     public GameObject holeMaskPrefab;
 
@@ -59,14 +58,17 @@ public class DiggingDown : MonoBehaviour
         {
             isActivated = false;
             PolygonCollider2D polygonCollider2D = collision.collider.GetComponent<PolygonCollider2D>();
+            Debug.Log(polygonCollider2D.points);
             StartDiggingDown(polygonCollider2D, collision.gameObject);
         }
     }
 
     void StartDiggingDown(PolygonCollider2D pcLeft, GameObject ground)
     {
+        printCollider(pcLeft);
         Debug.Log(ground.name);
         PolygonCollider2D pcRight = ground.AddComponent<PolygonCollider2D>();
+        pcRight.points = pcLeft.points;
 
         Vector3 playerLeftWorldPosition = transform.position;
         Vector3 playerRightWorldPosition = transform.position;
@@ -79,6 +81,9 @@ public class DiggingDown : MonoBehaviour
 
         Vector2[] newPointsLeft = pcLeft.points;
         Vector2[] newPointsRight = pcRight.points;
+
+        // newPointsRight[2].x = newPointsLeft[2].x;
+        // newPointsRight[3].x = newPointsLeft[3].x;
 
         newPointsLeft[2].x = playerLeftLocalPosition.x;
         newPointsLeft[3].x = playerLeftLocalPosition.x;
@@ -152,6 +157,14 @@ public class DiggingDown : MonoBehaviour
             Destroy(pair.collider);
             colMskList.Remove(pair);
         }
+    }
+
+    void printCollider(PolygonCollider2D col)
+    {
+        Debug.Log("[" + col.points[0].x + "; " + col.points[0].y + "]; [" + 
+        col.points[1].x + "; " + col.points[1].y + "]; [" + 
+        col.points[2].x + "; " + col.points[2].y + "]; [" + 
+        col.points[3].x + "; " + col.points[3].y + "]");
     }
 }
 

@@ -9,7 +9,8 @@ public class AntMovement : MonoBehaviour
     public int role = 0; // -1 = in_progress, 0 = walking, 1 = mining down
     private List<PolygonCollider2D> collidersToShrinkInY = new();
     private List<PolygonCollider2D> collidersToRemove = new();
-    public float diggingSpeed = 0.0001f;
+    public float startFallingY;
+    private float fallDamageThreshold = 7f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,10 @@ public class AntMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (startFallingY - transform.position.y > fallDamageThreshold)
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.tag == "Obstacle")
         {
             foreach (ContactPoint2D contact in collision.contacts)
@@ -42,6 +47,11 @@ public class AntMovement : MonoBehaviour
                 }
             }
         }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        startFallingY = transform.position.y;
     }
 
     void Flip()
