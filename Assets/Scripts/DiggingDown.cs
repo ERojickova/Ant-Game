@@ -5,13 +5,26 @@ using UnityEngine.EventSystems;
 
 public class DiggingDown : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private class ColliderMaskPair
+    {
+        public PolygonCollider2D collider;
+        public GameObject mask;
+
+        public ColliderMaskPair(PolygonCollider2D col, GameObject msk)
+        {
+            collider = col;
+            mask = msk;
+        }
+    }
+
+
     private bool isActivated = false;
-    private float antLenght = 1.2f;
-    private List<PolygonCollider2D> collidersToShrinkInY = new();
-    private List<PolygonCollider2D> collidersToRemove = new();
-    private List<GameObject> holesToGrow = new();
+    private float antLenght = 1.8f;
+    private List<ColliderMaskPair> colMskList = new();
+    private List<ColliderMaskPair> colMskListToRemove = new();
     public float diggingSpeed = 0.001f;
+    public float diggingSpeedWorld = 0.3f;
     public GameObject holeMaskPrefab;
 
     private AntMovement antMovementScript;
@@ -23,7 +36,7 @@ public class DiggingDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && antMovementScript.role != -1)
+        if (Input.GetMouseButtonDown(0) && antMovementScript.role == 0)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
@@ -32,45 +45,11 @@ public class DiggingDown : MonoBehaviour
             {
                 antMovementScript.speed = 0f;
                 isActivated = true;
-                antMovementScript.role = -1;
-            }
-            
-        }
-
-        // Shrinking collider:
-        foreach (PolygonCollider2D collider2D in collidersToShrinkInY) {
-            Vector2[] newPoints = collider2D.points;
-            newPoints[1].y -= (diggingSpeed * Time.deltaTime);
-            newPoints[2].y -= (diggingSpeed * Time.deltaTime);
-
-            collider2D.points = newPoints;
-
-            if (newPoints[1].y <= newPoints[0].y) {
-                // collider2D.enabled = false;
-                // Destroy(collider2D);
-                collidersToRemove.Add(collider2D);
-                antMovementScript.role = 0;
-                antMovementScript.speed = 2f;
+                antMovementScript.role = 1;
             }
         }
 
-        foreach (GameObject hole in holesToGrow)
-        {
-            Vector3 oldSize = hole.transform.localScale;
-            oldSize.y += ((diggingSpeed * 3.1f) * Time.deltaTime);
-            hole.transform.localScale = oldSize;
-
-            Vector3 oldPosition = hole.transform.position;
-            oldPosition.y -= ((diggingSpeed * 1.55f) * Time.deltaTime);
-            hole.transform.position = oldPosition;
-        }
-        
-
-        foreach (PolygonCollider2D collider2D in collidersToRemove)
-        {
-            Destroy(collider2D);
-            collidersToShrinkInY.Remove(collider2D);
-        }
+        ShrinkCollider();
     }
 
 
@@ -79,7 +58,6 @@ public class DiggingDown : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") && isActivated)
         {
             isActivated = false;
-            Debug.Log("Starting digging");
             PolygonCollider2D polygonCollider2D = collision.collider.GetComponent<PolygonCollider2D>();
             StartDiggingDown(polygonCollider2D, collision.gameObject);
         }
@@ -126,8 +104,56 @@ public class DiggingDown : MonoBehaviour
         Vector3 newHolePosition = transform.position;
         newHolePosition.y += 0.3f;
         GameObject newHole = Instantiate(holeMaskPrefab, newHolePosition, Quaternion.identity);
+        Vector3 oldScale = newHole.transform.localScale;
+        oldScale.x = antLenght;
+        newHole.transform.localScale = oldScale;
 
-        collidersToShrinkInY.Add(pcMiddle);
-        holesToGrow.Add(newHole);
+        colMskList.Add(new ColliderMaskPair(pcMiddle, newHole));
+    }
+
+    void ShrinkCollider()
+    {
+        foreach (ColliderMaskPair pair in colMskList)
+        {
+            PolygonCollider2D collider2D = pair.collider;
+            GameObject hole = pair.mask;
+
+            Vector2[] newPoints = collider2D.points;
+
+            Vector3 newPointWorld1 = collider2D.transform.TransformPoint(newPoints[1]);
+            Vector3 newPointWorld2 = collider2D.transform.TransformPoint(newPoints[2]);
+            newPointWorld1.y -= (diggingSpeedWorld * Time.deltaTime);
+            newPointWorld2.y -= (diggingSpeedWorld * Time.deltaTime);
+
+            newPoints[1] = collider2D.transform.InverseTransformPoint(newPointWorld1);
+            newPoints[2] = collider2D.transform.InverseTransformPoint(newPointWorld2);
+
+            collider2D.points = newPoints;
+
+
+            Vector3 oldSize = hole.transform.localScale;
+            oldSize.y += ((diggingSpeedWorld) * Time.deltaTime);
+            hole.transform.localScale = oldSize;
+
+            Vector3 oldPosition = hole.transform.position;
+            oldPosition.y -= ((diggingSpeedWorld * 0.5f) * Time.deltaTime);
+            hole.transform.position = oldPosition;
+
+            if (newPoints[1].y <= newPoints[0].y) {
+                colMskListToRemove.Add(pair);
+                // collidersToRemove.Add(collider2D);
+                antMovementScript.speed = 2f;
+                antMovementScript.role = 0;
+            }
+        }        
+
+        foreach (ColliderMaskPair pair in colMskListToRemove)
+        {
+            Destroy(pair.collider);
+            colMskList.Remove(pair);
+        }
     }
 }
+
+
+
