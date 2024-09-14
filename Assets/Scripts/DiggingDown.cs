@@ -57,18 +57,60 @@ public class DiggingDown : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle") && isActivated)
         {
             isActivated = false;
+
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            Collider2D colliderThatCollided = contact.collider;
+            PolygonCollider2D[] allPolygons = colliderThatCollided.GetComponents<PolygonCollider2D>();
+        }
+
             PolygonCollider2D polygonCollider2D = collision.collider.GetComponent<PolygonCollider2D>();
             Debug.Log(polygonCollider2D.points);
             StartDiggingDown(polygonCollider2D, collision.gameObject);
         }
     }
 
-    void StartDiggingDown(PolygonCollider2D pcLeft, GameObject ground)
+    void StartDiggingDown(PolygonCollider2D collider, GameObject ground)
     {
-        printCollider(pcLeft);
-        Debug.Log(ground.name);
-        PolygonCollider2D pcRight = ground.AddComponent<PolygonCollider2D>();
-        pcRight.points = pcLeft.points;
+        if (ground.name == "MiddleCollider")
+        {
+            antMovementScript.speed = 2f;
+            antMovementScript.role = 0;
+            return;
+        }
+        // Debug.Log("In StartDiggingown function");
+        // printCollider(pcLeft);
+        // Debug.Log(ground.name);
+
+        GameObject rightColliderObject = makeChild(ground, "RightCollider");
+        GameObject leftColliderObject = makeChild(ground, "LeftCollider");
+        GameObject middleColliderObject = makeChild(ground, "MiddleCollider");
+
+        
+        PolygonCollider2D pcRight = rightColliderObject.GetComponent<PolygonCollider2D>();
+        PolygonCollider2D pcLeft = leftColliderObject.GetComponent<PolygonCollider2D>();
+        PolygonCollider2D pcMiddle = middleColliderObject.GetComponent<PolygonCollider2D>();
+        
+        /*Vector3[] colliderWorldPoints = new Vector3[4];
+        Vector2[] pcRightLocalPoints = new Vector2[4];
+
+        for (int i = 0; i < 4; i++)
+        {
+            colliderWorldPoints[i] = collider.transform.TransformPoint(colliderWorldPoints[i]);
+            Debug.Log("world coord point: " + colliderWorldPoints[i]);
+        }
+
+        for (int i = 0; i < 4;  ++i)
+        {
+            pcRightLocalPoints[i] = collider.transform.InverseTransformPoint(colliderWorldPoints[i]);
+            Debug.Log("loacl coord point: " + pcRightLocalPoints[i]);
+        }
+
+        pcRight.points = pcRightLocalPoints;
+        pcLeft.points = collider.points;
+        pcMiddle.points = collider.points;*/
+
+        Destroy(collider);
 
         Vector3 playerLeftWorldPosition = transform.position;
         Vector3 playerRightWorldPosition = transform.position;
@@ -95,6 +137,7 @@ public class DiggingDown : MonoBehaviour
         pcRight.points = newPointsRight;
 
         // Adding middle collider
+        
         Vector2[] newPointsMiddle = new Vector2[]
         {
             newPointsLeft[2],
@@ -103,8 +146,28 @@ public class DiggingDown : MonoBehaviour
             newPointsRight[1]
             
         };
+        
+        if (newPointsMiddle[0].x < newPointsRight[3].x)
+        {
+            Debug.Log("middle[0]: " + pcMiddle.transform.TransformPoint(newPointsMiddle[0]).x);
+            Debug.Log("right[3]" + pcRight.transform.TransformPoint(newPointsRight[3]).x);
 
-        PolygonCollider2D pcMiddle = ground.AddComponent<PolygonCollider2D>();
+            newPointsMiddle[0] = newPointsRight[3];
+            newPointsMiddle[1] = newPointsRight[2];
+
+            // Destroy(pcRight);
+            // Destroy(rightColliderObject);
+        }
+
+        if (newPointsMiddle[3].x > newPointsLeft[0].x)
+        {
+            newPointsMiddle[3] = newPointsLeft[0];
+            newPointsMiddle[2] = newPointsLeft[1];  
+            // Destroy(pcLeft);
+            // Destroy(leftColliderObject);
+        }
+     
+        // PolygonCollider2D pcMiddle = ground.AddComponent<PolygonCollider2D>();
         pcMiddle.points = newPointsMiddle;
         Vector3 newHolePosition = transform.position;
         newHolePosition.y += 0.3f;
@@ -112,7 +175,7 @@ public class DiggingDown : MonoBehaviour
         Vector3 oldScale = newHole.transform.localScale;
         oldScale.x = antLenght;
         newHole.transform.localScale = oldScale;
-
+        
         colMskList.Add(new ColliderMaskPair(pcMiddle, newHole));
     }
 
@@ -159,12 +222,37 @@ public class DiggingDown : MonoBehaviour
         }
     }
 
-    void printCollider(PolygonCollider2D col)
+    GameObject makeChild(GameObject parent, string childName)
     {
-        Debug.Log("[" + col.points[0].x + "; " + col.points[0].y + "]; [" + 
-        col.points[1].x + "; " + col.points[1].y + "]; [" + 
-        col.points[2].x + "; " + col.points[2].y + "]; [" + 
-        col.points[3].x + "; " + col.points[3].y + "]");
+        GameObject child = Instantiate(parent, Vector3.zero, Quaternion.identity);
+        child.name = childName;
+        child.transform.SetParent(parent.transform, false);
+
+        SpriteRenderer spriteRenderer = child.GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.sprite = null;
+        }
+        
+
+        for (int i = child.transform.childCount - 1; i >= 0; i--)
+        {
+            GameObject grandchild = child.transform.GetChild(i).gameObject;
+            Destroy(grandchild);
+        }
+
+        PolygonCollider2D originalCollider = parent.GetComponent<PolygonCollider2D>();
+        PolygonCollider2D childCollider = child.GetComponent<PolygonCollider2D>();
+        Vector2[] localPoints = new Vector2[originalCollider.points.Length];
+
+        for (int i = 0; i < originalCollider.points.Length; i++)
+        {
+            localPoints[i] = child.transform.InverseTransformPoint(parent.transform.TransformPoint(originalCollider.points[i]));
+        }
+
+        childCollider.points = localPoints;
+
+        return child;
     }
 }
 
