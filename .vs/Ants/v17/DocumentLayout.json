@@ -1,10 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Ants\\",
+  "WorkspaceRootPath": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\ants\\assets\\scripts\\diggingdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\antmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\antmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\climbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\climbing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\floating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\floating.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\blocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\blocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\diggingdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\diggingdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +34,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DiggingDown.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Ants\\Assets\\Scripts\\DiggingDown.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DiggingDown.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Ants\\Assets\\Scripts\\DiggingDown.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DiggingDown.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAQwJUAAAA3AAAA",
+              "DocumentIndex": 1,
+              "Title": "Climbing.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Climbing.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Climbing.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Climbing.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Climbing.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T08:44:06.619Z",
+              "WhenOpened": "2024-11-01T11:43:26.214Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Floating.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Floating.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Floating.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Floating.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Floating.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T22:35:25.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Blocking.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Blocking.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Blocking.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Blocking.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Blocking.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAYwDMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T17:48:35.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SetRole.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SetRole.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SetRole.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SetRole.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SetRole.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAwEEAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T20:49:48.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AntMovement.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AntMovement.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AntMovement.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwCgAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-28T20:49:32.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DiggingDown.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\DiggingDown.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DiggingDown.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\DiggingDown.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DiggingDown.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAQwFwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T08:44:06.619Z"
             }
           ]
         }

@@ -6,16 +6,19 @@ public class AntMovement : MonoBehaviour
 {
     public float speed = 2f;
     private bool isFacingRight = false;
-    public int role = 0; // -1 = in_progress, 0 = walking, 1 = mining down
+    public AntRole role = 0; // -1 = in_progress, 0 = walking, 1 = mining down
     private List<PolygonCollider2D> collidersToShrinkInY = new();
     private List<PolygonCollider2D> collidersToRemove = new();
     public float startFallingY;
     private float fallDamageThreshold = 7f;
+    private bool climbing = false;
+
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       rb = GetComponent<Rigidbody2D>(); 
     }
 
 
@@ -26,17 +29,23 @@ public class AntMovement : MonoBehaviour
         {
             movement_vector = Vector3.right;
         }
+
+        if (climbing)
+        {
+            movement_vector = Vector3.up;
+        }
         
         transform.Translate(movement_vector * speed * Time.deltaTime);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (startFallingY - transform.position.y > fallDamageThreshold)
+        if ((startFallingY - transform.position.y > fallDamageThreshold) && (role != AntRole.Floater))
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Obstacle")
+
+        if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall") && role != AntRole.Climber)
         {
             foreach (ContactPoint2D contact in collision.contacts)
             {
@@ -47,11 +56,35 @@ public class AntMovement : MonoBehaviour
                 }
             }
         }
+
+        if (collision.gameObject.tag == "Wall" && role == AntRole.Climber)
+        {
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                Vector2 normal = contact.normal;
+                if (Mathf.Abs(normal.x) > Mathf.Abs(normal.y))
+                {
+                    climbing = true;
+                    rb.gravityScale = 0.0f;
+                }
+            }
+        }
+
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        startFallingY = transform.position.y;
+        if (collision.gameObject.tag == "Floor")
+        {
+            startFallingY = transform.position.y;
+        }
+
+        if (collision.gameObject.tag == "Wall")
+        {
+            climbing = false;
+            rb.gravityScale = 1.0f;
+        }
+        
     }
 
     void Flip()

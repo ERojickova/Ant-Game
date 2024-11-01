@@ -25,26 +25,46 @@ public class DiggingDown : MonoBehaviour
     private List<ColliderMaskPair> colMskListToRemove = new();
     public float diggingSpeedWorld = 0.3f;
     public GameObject holeMaskPrefab;
+    public GameObject holeTriggerPrefab;
 
+    
+
+    public bool inHole = false;
+
+    private SetRole setRoleScript;
     private AntMovement antMovementScript;
+
+    private float printingDelay = 0; // Just for debuging 
     void Start()
     {
         antMovementScript = GetComponent<AntMovement>();
+        setRoleScript = FindObjectOfType<SetRole>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && antMovementScript.role == 0)
+        printingDelay += Time.deltaTime;
+        if (printingDelay > 3)
+        {
+            printingDelay = 0;
+            Debug.Log("From digging script: " + setRoleScript.activeRole + "Ant: " + transform.name);
+        }
+
+        if (Input.GetMouseButtonDown(0) && antMovementScript.role == AntRole.None && setRoleScript.activeRole == AntRole.DiggerDown)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.name == gameObject.name)
+            if (hit.collider != null && hit.collider.name == gameObject.name && !inHole)
             {
-                antMovementScript.speed = 0f;
                 isActivated = true;
-                antMovementScript.role = 1;
+                antMovementScript.role = AntRole.DiggerDown; 
+                setRoleScript.activeRole = AntRole.None;
+                setRoleScript.numDiggerDown -= 1;
+                Debug.Log("Setting isActivated on true");
+
             }
         }
 
@@ -54,33 +74,52 @@ public class DiggingDown : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle") && isActivated)
+        if (collision.gameObject.CompareTag("Floor") && isActivated)
         {
+            Debug.Log("Setting isActivated on false");
             isActivated = false;
 
-        foreach (ContactPoint2D contact in collision.contacts)
-        {
-            Collider2D colliderThatCollided = contact.collider;
-            PolygonCollider2D[] allPolygons = colliderThatCollided.GetComponents<PolygonCollider2D>();
-        }
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                Collider2D colliderThatCollided = contact.collider;
+                PolygonCollider2D[] allPolygons = colliderThatCollided.GetComponents<PolygonCollider2D>();
+            }
 
             PolygonCollider2D polygonCollider2D = collision.collider.GetComponent<PolygonCollider2D>();
-            Debug.Log(polygonCollider2D.points);
+            // Debug.Log(polygonCollider2D.points);
             StartDiggingDown(polygonCollider2D, collision.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hole"))
+        {
+            inHole = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Hole"))
+        {
+            inHole = false;
         }
     }
 
     void StartDiggingDown(PolygonCollider2D collider, GameObject ground)
     {
+        antMovementScript.role = AntRole.DiggerDown;
+        antMovementScript.speed = 0f;
+        addHat();
+
+        Debug.Log("Start Digging");
         if (ground.name == "MiddleCollider")
         {
             antMovementScript.speed = 2f;
             antMovementScript.role = 0;
             return;
         }
-        // Debug.Log("In StartDiggingown function");
-        // printCollider(pcLeft);
-        // Debug.Log(ground.name);
 
         GameObject rightColliderObject = makeChild(ground, "RightCollider");
         GameObject leftColliderObject = makeChild(ground, "LeftCollider");
@@ -90,25 +129,6 @@ public class DiggingDown : MonoBehaviour
         PolygonCollider2D pcRight = rightColliderObject.GetComponent<PolygonCollider2D>();
         PolygonCollider2D pcLeft = leftColliderObject.GetComponent<PolygonCollider2D>();
         PolygonCollider2D pcMiddle = middleColliderObject.GetComponent<PolygonCollider2D>();
-        
-        /*Vector3[] colliderWorldPoints = new Vector3[4];
-        Vector2[] pcRightLocalPoints = new Vector2[4];
-
-        for (int i = 0; i < 4; i++)
-        {
-            colliderWorldPoints[i] = collider.transform.TransformPoint(colliderWorldPoints[i]);
-            Debug.Log("world coord point: " + colliderWorldPoints[i]);
-        }
-
-        for (int i = 0; i < 4;  ++i)
-        {
-            pcRightLocalPoints[i] = collider.transform.InverseTransformPoint(colliderWorldPoints[i]);
-            Debug.Log("loacl coord point: " + pcRightLocalPoints[i]);
-        }
-
-        pcRight.points = pcRightLocalPoints;
-        pcLeft.points = collider.points;
-        pcMiddle.points = collider.points;*/
 
         Destroy(collider);
 
@@ -124,8 +144,6 @@ public class DiggingDown : MonoBehaviour
         Vector2[] newPointsLeft = pcLeft.points;
         Vector2[] newPointsRight = pcRight.points;
 
-        // newPointsRight[2].x = newPointsLeft[2].x;
-        // newPointsRight[3].x = newPointsLeft[3].x;
 
         newPointsLeft[2].x = playerLeftLocalPosition.x;
         newPointsLeft[3].x = playerLeftLocalPosition.x;
@@ -137,7 +155,6 @@ public class DiggingDown : MonoBehaviour
         pcRight.points = newPointsRight;
 
         // Adding middle collider
-        
         Vector2[] newPointsMiddle = new Vector2[]
         {
             newPointsLeft[2],
@@ -147,34 +164,19 @@ public class DiggingDown : MonoBehaviour
             
         };
         
-        if (newPointsMiddle[0].x < newPointsRight[3].x)
-        {
-            Debug.Log("middle[0]: " + pcMiddle.transform.TransformPoint(newPointsMiddle[0]).x);
-            Debug.Log("right[3]" + pcRight.transform.TransformPoint(newPointsRight[3]).x);
-
-            newPointsMiddle[0] = newPointsRight[3];
-            newPointsMiddle[1] = newPointsRight[2];
-
-            // Destroy(pcRight);
-            // Destroy(rightColliderObject);
-        }
-
-        if (newPointsMiddle[3].x > newPointsLeft[0].x)
-        {
-            newPointsMiddle[3] = newPointsLeft[0];
-            newPointsMiddle[2] = newPointsLeft[1];  
-            // Destroy(pcLeft);
-            // Destroy(leftColliderObject);
-        }
-     
-        // PolygonCollider2D pcMiddle = ground.AddComponent<PolygonCollider2D>();
         pcMiddle.points = newPointsMiddle;
+
         Vector3 newHolePosition = transform.position;
         newHolePosition.y += 0.3f;
         GameObject newHole = Instantiate(holeMaskPrefab, newHolePosition, Quaternion.identity);
         Vector3 oldScale = newHole.transform.localScale;
         oldScale.x = antLenght;
         newHole.transform.localScale = oldScale;
+
+        GameObject holeTrigger = Instantiate(holeTriggerPrefab, newHolePosition, Quaternion.identity);
+        Vector3 triggerScale = newHole.transform.localPosition;
+        triggerScale.x = antLenght * 2;
+        holeTrigger.transform.localScale = triggerScale;
         
         colMskList.Add(new ColliderMaskPair(pcMiddle, newHole));
     }
@@ -212,6 +214,7 @@ public class DiggingDown : MonoBehaviour
                 // collidersToRemove.Add(collider2D);
                 antMovementScript.speed = 2f;
                 antMovementScript.role = 0;
+                removeHat();
             }
         }        
 
@@ -253,6 +256,38 @@ public class DiggingDown : MonoBehaviour
         childCollider.points = localPoints;
 
         return child;
+    }
+
+    private void printColliderPoints(PolygonCollider2D collider, string name)
+    {
+        Debug.Log(name + ": (" + collider.points[0].x + ", " + collider.points[0].y + "); ("
+            + collider.points[1].x + ", " + collider.points[1].y + "); ("
+            + collider.points[2].x + ", " + collider.points[2].y + "); ("
+            + collider.points[3].x + ", " + collider.points[3].y + "); (");
+    }
+
+    private void addHat()
+    {
+        GameObject hat = transform.Find("digger_down_hat").gameObject;
+        hat.GetComponent<SpriteRenderer>().enabled = true;
+
+        GameObject left_antennae = transform.Find("antennae_left").gameObject;
+        left_antennae.GetComponent<SpriteRenderer>().enabled = false;
+
+        GameObject right_antennae = transform.Find("antennae_right").gameObject;
+        right_antennae.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    private void removeHat()
+    {
+        GameObject hat = transform.Find("digger_down_hat").gameObject;
+        hat.GetComponent<SpriteRenderer>().enabled = false;
+
+        GameObject left_antennae = transform.Find("antennae_left").gameObject;
+        left_antennae.GetComponent<SpriteRenderer>().enabled = true;
+
+        GameObject right_antennae = transform.Find("antennae_right").gameObject;
+        right_antennae.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
 

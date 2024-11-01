@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - AddAnt
+  - Hole
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - UI
   - Ants
   - Enviroment
-  - 
+  - Blocking Ant
   - 
   - 
   - 
