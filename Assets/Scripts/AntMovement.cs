@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class AntMovement : MonoBehaviour
 {
     public float speed = 2f;
-    private bool isFacingRight = false;
+    public bool isFacingRight = false;
     public AntRole role = 0; // -1 = in_progress, 0 = walking, 1 = mining down
     private List<PolygonCollider2D> collidersToShrinkInY = new();
     private List<PolygonCollider2D> collidersToRemove = new();
     public float startFallingY;
     private float fallDamageThreshold = 7f;
-    private bool climbing = false;
+    private bool isClimbing = false;
+    public bool isDiggingSide = false;
+    private bool hasBeenFliped = false;
 
     private Rigidbody2D rb;
 
@@ -30,7 +33,7 @@ public class AntMovement : MonoBehaviour
             movement_vector = Vector3.right;
         }
 
-        if (climbing)
+        if (isClimbing)
         {
             movement_vector = Vector3.up;
         }
@@ -40,13 +43,15 @@ public class AntMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        
         if ((startFallingY - transform.position.y > fallDamageThreshold) && (role != AntRole.Floater))
         {
             Destroy(gameObject);
         }
 
-        if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall") && role != AntRole.Climber)
+        if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall") && role != AntRole.Climber && !isDiggingSide && !hasBeenFliped)
         {
+            
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 Vector2 normal = contact.normal;
@@ -64,7 +69,7 @@ public class AntMovement : MonoBehaviour
                 Vector2 normal = contact.normal;
                 if (Mathf.Abs(normal.x) > Mathf.Abs(normal.y))
                 {
-                    climbing = true;
+                    isClimbing = true;
                     rb.gravityScale = 0.0f;
                 }
             }
@@ -81,14 +86,20 @@ public class AntMovement : MonoBehaviour
 
         if (collision.gameObject.tag == "Wall")
         {
-            climbing = false;
+            isClimbing = false;
             rb.gravityScale = 1.0f;
+        }
+
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacle")
+        {
+            hasBeenFliped = false;
         }
         
     }
 
     void Flip()
     {
+        hasBeenFliped = true;
         isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
         scale.x *= -1;

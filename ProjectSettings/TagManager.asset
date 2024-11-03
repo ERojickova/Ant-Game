@@ -8,6 +8,8 @@ TagManager:
   - AddAnt
   - Hole
   - Ground
+  - Floor
+  - Wall
   layers:
   - Default
   - TransparentFX

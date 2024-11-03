@@ -27,8 +27,6 @@ public class DiggingDown : MonoBehaviour
     public GameObject holeMaskPrefab;
     public GameObject holeTriggerPrefab;
 
-    
-
     public bool inHole = false;
 
     private SetRole setRoleScript;
@@ -45,13 +43,6 @@ public class DiggingDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        printingDelay += Time.deltaTime;
-        if (printingDelay > 3)
-        {
-            printingDelay = 0;
-            Debug.Log("From digging script: " + setRoleScript.activeRole + "Ant: " + transform.name);
-        }
-
         if (Input.GetMouseButtonDown(0) && antMovementScript.role == AntRole.None && setRoleScript.activeRole == AntRole.DiggerDown)
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -63,8 +54,6 @@ public class DiggingDown : MonoBehaviour
                 antMovementScript.role = AntRole.DiggerDown; 
                 setRoleScript.activeRole = AntRole.None;
                 setRoleScript.numDiggerDown -= 1;
-                Debug.Log("Setting isActivated on true");
-
             }
         }
 
@@ -114,6 +103,8 @@ public class DiggingDown : MonoBehaviour
         addHat();
 
         Debug.Log("Start Digging");
+
+        // is this if necessary???
         if (ground.name == "MiddleCollider")
         {
             antMovementScript.speed = 2f;
@@ -167,7 +158,7 @@ public class DiggingDown : MonoBehaviour
         pcMiddle.points = newPointsMiddle;
 
         Vector3 newHolePosition = transform.position;
-        newHolePosition.y += 0.3f;
+        newHolePosition.y -= 0.43f;
         GameObject newHole = Instantiate(holeMaskPrefab, newHolePosition, Quaternion.identity);
         Vector3 oldScale = newHole.transform.localScale;
         oldScale.x = antLenght;
@@ -211,9 +202,13 @@ public class DiggingDown : MonoBehaviour
 
             if (newPoints[1].y <= newPoints[0].y) {
                 colMskListToRemove.Add(pair);
-                // collidersToRemove.Add(collider2D);
                 antMovementScript.speed = 2f;
                 antMovementScript.role = 0;
+
+                Vector3 newScale = pair.mask.transform.localScale;
+                newScale.y += 0.1f;
+                pair.mask.transform.localScale = newScale;
+
                 removeHat();
             }
         }        
