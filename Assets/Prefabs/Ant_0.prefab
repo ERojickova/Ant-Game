@@ -620,6 +620,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
+      propertyPath: m_TagString
+      value: Ant
+      objectReference: {fileID: 0}
     - target: {fileID: -8320481939255083305, guid: afe7a4a30ac95b94eb472120d8529256, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -1240,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isFacingRight: 0
   role: 0
   startFallingY: 0
   isDiggingSide: 0

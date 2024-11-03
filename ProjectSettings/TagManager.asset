@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Floor
   - Wall
+  - Ant
   layers:
   - Default
   - TransparentFX

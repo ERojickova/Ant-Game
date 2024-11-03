@@ -6,7 +6,6 @@ public class SpawnAnt : MonoBehaviour
 {
     public GameObject antPrefab;
     private Vector3 spawnPosition;
-    public Quaternion spawnRotation;
     public float delay;
     public int numberOfAnts;
     
@@ -19,11 +18,11 @@ public class SpawnAnt : MonoBehaviour
 
     IEnumerator SpawnAntWithDelay()
     {
-        for (int i = 1; i < numberOfAnts; i++)
-        {
-            yield return new WaitForSeconds(delay);
-            GameObject antClone = Instantiate(antPrefab, spawnPosition, spawnRotation);
+        for (int i = 1; i <= numberOfAnts; i++)
+        { 
+            GameObject antClone = Instantiate(antPrefab, spawnPosition, Quaternion.identity);
             antClone.name = "Ant_" + i;
+            yield return new WaitForSeconds(delay);
         }
     }
 }
