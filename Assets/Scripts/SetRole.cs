@@ -26,39 +26,76 @@ public class SetRole : MonoBehaviour
     public Button builderButton;
     public Button bomberButton;
 
+    private Dictionary<AntRole, int> roleCounts;
 
     private GUIStyle labelStyle;
+
+    private class Role
+    {
+        public AntRole role;
+        public int antCount;
+        public Button button;
+        public string buttonText;
+
+        public Role(AntRole newRole, int newAntCount, Button newButton, string buttonText)
+        {
+            role = newRole;
+            antCount = newAntCount;
+            button = newButton;
+            this.buttonText = buttonText;
+        }
+    }
+
+    private Role diggerDown;
+    private Role diggerSide;
+    private Role diggerDiag;
+    private Role blocker;
+    private Role floater;
+    private Role builder;
+    private Role climber;
+    private Role bomber;
 
     void Start()
     {
         labelStyle = new GUIStyle();
         labelStyle.fontSize = 32;
         labelStyle.normal.textColor = Color.white;
+
+        diggerDown = new Role(AntRole.DiggerDown, numDiggerDown, diggerDownButton, "Down digger: ");
+        diggerSide = new Role(AntRole.DiggerSide, numDiggerSide, diggerSideButton, "Side digger: ");
+        diggerDiag = new Role(AntRole.DiggerDiag, numDiggerDiag, diggerDiagButton, "Diag digger: ");
+        blocker = new Role(AntRole.Blocker, numBlocker, blockerButton, "Blocker: ");
+        floater = new Role(AntRole.Floater, numFloater, floaterButton, "Floater: ");
+        builder = new Role(AntRole.Builder, numBuilder, builderButton, "Builder: ");
+        climber = new Role(AntRole.Climber, numClimber, climberButton, "Climber: ");
+        bomber = new Role(AntRole.Bomber, numBomber, bomberButton, "Bomber: ");
     }
 
     void Update()
     {
-        UpdateButtonText(diggerDownButton, "Down digger: ", numDiggerDown);
-        UpdateButtonText(diggerSideButton, "Side digger: ", numDiggerSide);
-        UpdateButtonText(diggerDiagButton, "Diag digger: ", numDiggerDiag);
-        UpdateButtonText(floaterButton, "Floater: ", numFloater);
-        UpdateButtonText(blockerButton, "Blocker: ", numBlocker);
-        UpdateButtonText(climberButton, "Climber: ", numClimber);
-        UpdateButtonText(builderButton, "Builder: ", numBuilder);
-        UpdateButtonText(bomberButton, "Bomber: ", numBomber);
+        UpdateButton(diggerDown);
+        UpdateButton(diggerSide);
+        UpdateButton(diggerDiag);
+        UpdateButton(blocker);
+        UpdateButton(floater);
+        UpdateButton(builder);
+        UpdateButton(climber);
+        UpdateButton(bomber);
     }
 
     public void SetRoleFunction(int newRole)
     {
         AntRole newRoleEnum = (AntRole)newRole;
-        
-        if (activeRole != newRoleEnum)
+        if (isRoleAvailable(newRoleEnum))
         {
-            activeRole = newRoleEnum;
-        }
-        else
-        {
-            activeRole = 0;
+            if (activeRole != newRoleEnum)
+            {
+                activeRole = newRoleEnum;
+            }
+            else
+            {
+                activeRole = 0;
+            }
         }
         
     }
@@ -68,13 +105,22 @@ public class SetRole : MonoBehaviour
         GUI.Label(new Rect(10, 10, 200, 200), "Role: " + activeRole, labelStyle);
     }
 
-    private void UpdateButtonText(Button button, string prefix, int numberOfAnts)
+    private void UpdateButton(Role role)
     {
-        TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+        TextMeshProUGUI buttonText = role.button.GetComponentInChildren<TextMeshProUGUI>();
         if (buttonText != null )
         {
-            buttonText.text = prefix + numberOfAnts.ToString();
-
+            buttonText.text = role.buttonText + role.antCount.ToString();
         }
+
+        if (role.antCount <= 0)
+        {
+            role.button.interactable = false;
+        }
+    }
+
+    private bool isRoleAvailable(AntRole role)
+    {
+        return roleCounts.ContainsKey(role) && roleCounts[role] > 0;
     }
 }
