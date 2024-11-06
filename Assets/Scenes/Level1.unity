@@ -1172,6 +1172,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2211657883752709899, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: numBlocker
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211657883752709899, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: numDiggerDown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211657883752709899, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: numDiggerSide
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2607813918514950981, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1435,6 +1447,18 @@ PrefabInstance:
     - target: {fileID: 8876892981763364074, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
       propertyPath: m_Name
       value: LevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883805985287829580, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.44642222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883805985287829580, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.44642222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883805985287829580, guid: bd51d76f37cae5d428a830e54f911682, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.4528302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

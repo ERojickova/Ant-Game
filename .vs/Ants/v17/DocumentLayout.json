@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,11 +11,7 @@
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawnant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\diggingdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\diggingdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\timecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\timecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\timecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -58,7 +54,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "TimeControler.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\TimeControler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TimeControler.cs",
@@ -66,8 +62,7 @@
               "RelativeToolTip": "Assets\\Scripts\\TimeControler.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T17:26:26.074Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T17:26:26.074Z"
             },
             {
               "$type": "Document",
@@ -79,12 +74,11 @@
               "RelativeToolTip": "Assets\\Scripts\\SpawnAnt.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T16:53:04.144Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T16:53:04.144Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "EndOfLevel.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\EndOfLevel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EndOfLevel.cs",
@@ -92,12 +86,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EndOfLevel.cs",
               "ViewState": "AQIAAA4AAAAAAAAAAAAAwC8AAABKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T15:55:14.694Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-03T15:55:14.694Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "DiggingSide.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\DiggingSide.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DiggingSide.cs",
@@ -109,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "AntMovement.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AntMovement.cs",
@@ -121,7 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Climbing.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Climbing.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Climbing.cs",
@@ -133,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Floating.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Floating.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Floating.cs",
@@ -145,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Blocking.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\Blocking.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Blocking.cs",
@@ -163,27 +156,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\SetRole.cs",
               "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SetRole.cs",
               "RelativeToolTip": "Assets\\Scripts\\SetRole.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwC8AAAAXAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAowHsAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-28T20:49:48.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DiggingDown.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\DiggingDown.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DiggingDown.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\DiggingDown.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DiggingDown.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM4AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T08:44:06.619Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AntRoles.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntRoles.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AntRoles.cs",
@@ -191,8 +171,7 @@
               "RelativeToolTip": "Assets\\Scripts\\AntRoles.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T11:49:21.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T11:49:21.426Z"
             }
           ]
         }
