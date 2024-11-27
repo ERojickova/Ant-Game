@@ -8,15 +8,6 @@ public class SetRole : MonoBehaviour
 {
     public AntRole activeRole = 0;
 
-    public int numDiggerDown = 0;
-    public int numDiggerSide = 0;
-    public int numDiggerDiag = 0;
-    public int numFloater = 0;
-    public int numBlocker = 0;
-    public int numClimber = 0;
-    public int numBuilder = 0;
-    public int numBomber = 0;
-
     public Button diggerDownButton;
     public Button diggerSideButton;
     public Button diggerDiagButton;
@@ -26,9 +17,9 @@ public class SetRole : MonoBehaviour
     public Button builderButton;
     public Button bomberButton;
 
-    private Dictionary<AntRole, int> roleCounts;
-
     private GUIStyle labelStyle;
+    private LevelData levelData;
+    public int levelId;
 
     private class Role
     {
@@ -46,14 +37,7 @@ public class SetRole : MonoBehaviour
         }
     }
 
-    private Role diggerDown;
-    private Role diggerSide;
-    private Role diggerDiag;
-    private Role blocker;
-    private Role floater;
-    private Role builder;
-    private Role climber;
-    private Role bomber;
+    private Dictionary<AntRole, Role> roleDictionary;
 
     void Start()
     {
@@ -61,26 +45,27 @@ public class SetRole : MonoBehaviour
         labelStyle.fontSize = 32;
         labelStyle.normal.textColor = Color.white;
 
-        diggerDown = new Role(AntRole.DiggerDown, numDiggerDown, diggerDownButton, "Down digger: ");
-        diggerSide = new Role(AntRole.DiggerSide, numDiggerSide, diggerSideButton, "Side digger: ");
-        diggerDiag = new Role(AntRole.DiggerDiag, numDiggerDiag, diggerDiagButton, "Diag digger: ");
-        blocker = new Role(AntRole.Blocker, numBlocker, blockerButton, "Blocker: ");
-        floater = new Role(AntRole.Floater, numFloater, floaterButton, "Floater: ");
-        builder = new Role(AntRole.Builder, numBuilder, builderButton, "Builder: ");
-        climber = new Role(AntRole.Climber, numClimber, climberButton, "Climber: ");
-        bomber = new Role(AntRole.Bomber, numBomber, bomberButton, "Bomber: ");
+        levelData = System.Array.Find(GameManager.Instance.levelDataList.levels, level => level.levelId == levelId);
+
+        roleDictionary = new Dictionary<AntRole, Role>
+        {
+            { AntRole.DiggerDown, new Role(AntRole.DiggerDown, levelData.numDiggerDown, diggerDownButton, "Down digger: ") },
+            { AntRole.DiggerSide, new Role(AntRole.DiggerSide, levelData.numDiggerSide, diggerSideButton, "Side digger: ") },
+            { AntRole.DiggerDiag, new Role(AntRole.DiggerDiag, levelData.numDiggerDiag, diggerDiagButton, "Diag digger: ") },
+            { AntRole.Blocker, new Role(AntRole.Blocker, levelData.numBlocker, blockerButton, "Blocker: ") },
+            { AntRole.Floater, new Role(AntRole.Floater, levelData.numFloater, floaterButton, "Floater: ") },
+            { AntRole.Builder, new Role(AntRole.Builder, levelData.numBuilder, builderButton, "Builder: ") },
+            { AntRole.Climber, new Role(AntRole.Climber, levelData.numClimber, climberButton, "Climber: ") },
+            { AntRole.Bomber, new Role(AntRole.Bomber, levelData.numBomber, bomberButton, "Bomber: ") }
+        };
     }
 
     void Update()
     {
-        UpdateButton(diggerDown);
-        UpdateButton(diggerSide);
-        UpdateButton(diggerDiag);
-        UpdateButton(blocker);
-        UpdateButton(floater);
-        UpdateButton(builder);
-        UpdateButton(climber);
-        UpdateButton(bomber);
+        foreach(Role role in roleDictionary.Values)
+        {
+            UpdateButton(role);
+        }
     }
 
     public void SetRoleFunction(int newRole)
@@ -121,6 +106,12 @@ public class SetRole : MonoBehaviour
 
     private bool isRoleAvailable(AntRole role)
     {
-        return roleCounts.ContainsKey(role) && roleCounts[role] > 0;
+        return (roleDictionary.ContainsKey(role) ? roleDictionary[role].antCount : 0) > 0;
+    }
+
+    public void removedUsedAnt(AntRole antRole)
+    {
+        Role role = roleDictionary[antRole];
+        role.antCount -= 1;
     }
 }
