@@ -11,6 +11,7 @@ TagManager:
   - Floor
   - Wall
   - Ant
+  - EdgeWall
   layers:
   - Default
   - TransparentFX

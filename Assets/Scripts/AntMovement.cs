@@ -11,7 +11,7 @@ public class AntMovement : MonoBehaviour
     private List<PolygonCollider2D> collidersToShrinkInY = new();
     private List<PolygonCollider2D> collidersToRemove = new();
     public float startFallingY;
-    private float fallDamageThreshold = 6.5f;
+    private float fallDamageThreshold = 5f;
     private bool isClimbing = false;
     public bool isDiggingSide = false;
     private bool hasBeenFliped = false;
@@ -49,7 +49,8 @@ public class AntMovement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Floor") && role != AntRole.Climber && !isDiggingSide && !hasBeenFliped)
+        if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Floor" || collision.gameObject.tag == "EdgeWall") 
+            && !(role == AntRole.Climber && collision.gameObject.tag == "Wall") && !isDiggingSide && !hasBeenFliped)
         {
             
             foreach (ContactPoint2D contact in collision.contacts)
@@ -91,7 +92,7 @@ public class AntMovement : MonoBehaviour
             rb.gravityScale = 1.0f;
         }
 
-        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Floor")
+        if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Floor" || collision.gameObject.tag == "EdgeWall")
         {
             hasBeenFliped = false;
         }
