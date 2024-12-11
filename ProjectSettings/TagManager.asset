@@ -12,6 +12,8 @@ TagManager:
   - Wall
   - Ant
   - EdgeWall
+  - Deadly
+  - AntBlock
   layers:
   - Default
   - TransparentFX

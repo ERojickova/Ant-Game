@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8989fe6eadb099478fa604899de392e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antPrefab: {fileID: 237735803401779951, guid: 56c5327255e50af43b9c684e24ab75ad, type: 3}
+  antPrefab: {fileID: 6707221778205557682, guid: 2365331229ed1504eadf300de6c84073, type: 3}
   delay: 2
   levelId: 1
 --- !u!4 &787117051
@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 787117049}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6, y: 6.04, z: 0}
+  m_LocalPosition: {x: 1.25, y: 5.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2047,11 +2047,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5017554624434693638, guid: c2c545c218795fc4b80ba46a1fd003ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.16
+      value: 11.56
       objectReference: {fileID: 0}
     - target: {fileID: 5017554624434693638, guid: c2c545c218795fc4b80ba46a1fd003ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.31
+      value: -1.3
       objectReference: {fileID: 0}
     - target: {fileID: 5017554624434693638, guid: c2c545c218795fc4b80ba46a1fd003ba, type: 3}
       propertyPath: m_LocalPosition.z
