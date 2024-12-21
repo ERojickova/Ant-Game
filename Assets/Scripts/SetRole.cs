@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class SetRole : MonoBehaviour
@@ -58,6 +59,7 @@ public class SetRole : MonoBehaviour
             { AntRole.Climber, new Role(AntRole.Climber, levelData.numClimber, climberButton, "Climber: ") },
             { AntRole.Bomber, new Role(AntRole.Bomber, levelData.numBomber, bomberButton, "Bomber: ") }
         };
+
     }
 
     void Update()
@@ -65,6 +67,11 @@ public class SetRole : MonoBehaviour
         foreach(Role role in roleDictionary.Values)
         {
             UpdateButton(role);
+        }
+
+        if (activeRole == AntRole.None)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
         }
     }
 
@@ -101,6 +108,11 @@ public class SetRole : MonoBehaviour
         if (role.antCount <= 0)
         {
             role.button.interactable = false;
+        }
+
+        if (role.role == activeRole)
+        {
+            EventSystem.current.SetSelectedGameObject(role.button.gameObject);
         }
     }
 

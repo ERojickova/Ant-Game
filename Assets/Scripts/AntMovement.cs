@@ -59,7 +59,7 @@ public class AntMovement : MonoBehaviour
         if ((collision.gameObject.tag == "Obstacle" || collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Floor" || collision.gameObject.tag == "EdgeWall" || collision.gameObject.tag == "AntBlock") 
             && !(role == AntRole.Climber && collision.gameObject.tag == "Wall") && !isDiggingSide && !hasBeenFliped)
         {
-            
+            Debug.Log("otocka");
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 Vector2 normal = contact.normal;
@@ -95,7 +95,7 @@ public class AntMovement : MonoBehaviour
             startFallingY = transform.position.y;
         }
 
-        if (collision.gameObject.tag == "Wall")
+        if (isClimbing && collision.gameObject.tag == "Wall")
         {
             animator.SetBool("IsClimbing", false);
             isClimbing = false;
@@ -112,6 +112,7 @@ public class AntMovement : MonoBehaviour
 
     void Flip()
     {
+
         hasBeenFliped = true;
         isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
