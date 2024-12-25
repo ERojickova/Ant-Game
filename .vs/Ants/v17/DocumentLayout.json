@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\antroles\\diggingside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\antroles\\diggingside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\antmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\antmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\menubuttoncontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menubuttoncontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\soundsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\soundsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\antroles\\blocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\antroles\\blocking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\menubuttoncontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menubuttoncontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|c:\\users\\elisk\\documents\\fel\\s5-finsko\\portfolio_project\\ants\\assets\\scripts\\endoflevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\endoflevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endoflevel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\savedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\leveldatalist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\leveldatalist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\assets\\scripts\\timecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9635DD-60D3-BDDA-0401-AF4508BF87E0}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\timecontroler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,37 +38,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 214,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DiggingSide.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntRoles\\DiggingSide.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AntRoles\\DiggingSide.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntRoles\\DiggingSide.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AntRoles\\DiggingSide.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAqwMAAAAAsAAAA",
+              "DocumentIndex": 5,
+              "Title": "SaveData.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SaveData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SaveData.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SaveData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SaveData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T21:41:54.632Z",
+              "WhenOpened": "2024-12-25T16:00:54.474Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SoundSetting.cs",
+              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SoundSetting.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SoundSetting.cs",
+              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SoundSetting.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SoundSetting.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T18:12:23.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SetRole.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SetRole.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SetRole.cs",
               "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\SetRole.cs",
               "RelativeToolTip": "Assets\\Scripts\\SetRole.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAowEIAAAArAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAA1wCsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-21T22:04:10.193Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-21T22:04:10.193Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "LevelDataList.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\LevelDataList.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevelDataList.cs",
@@ -88,77 +92,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AntMovement.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AntMovement.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AntMovement.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAgwDsAAABhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T18:24:05.727Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABwAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-11T11:35:26.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Blocking.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntRoles\\Blocking.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AntRoles\\Blocking.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\AntRoles\\Blocking.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AntRoles\\Blocking.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:40:27.93Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "EndOfLevel.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\EndOfLevel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EndOfLevel.cs",
               "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\EndOfLevel.cs",
               "RelativeToolTip": "Assets\\Scripts\\EndOfLevel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAABBwEIAAAAgAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwD8AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:33:11.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T15:33:11.639Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TimeControler.cs",
-              "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\TimeControler.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\TimeControler.cs",
-              "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\TimeControler.cs",
-              "RelativeToolTip": "Assets\\Scripts\\TimeControler.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwE0AAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T15:32:52.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "MenuButtonControler.cs",
               "DocumentMoniker": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\MenuButtonControler.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuButtonControler.cs",
               "ToolTip": "C:\\Users\\elisk\\Documents\\FEL\\S5-Finsko\\Portfolio_project\\Ants\\Assets\\Scripts\\MenuButtonControler.cs",
               "RelativeToolTip": "Assets\\Scripts\\MenuButtonControler.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAgwB8AAAAjAAAA",
+              "ViewState": "AQIAABQAAAAAAAAAAAAwwF0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T18:01:42.609Z",
               "EditorCaption": ""

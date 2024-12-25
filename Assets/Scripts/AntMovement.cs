@@ -46,8 +46,9 @@ public class AntMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.tag != "AntBlock" && (startFallingY - transform.position.y > fallDamageThreshold) && (role != AntRole.Floater))
+        if ((startFallingY - transform.position.y > fallDamageThreshold) && (role != AntRole.Floater))
         {
+            Debug.Log("death");
             Destroy(gameObject);
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SetRole : MonoBehaviour
@@ -18,7 +19,6 @@ public class SetRole : MonoBehaviour
     public Button builderButton;
     public Button bomberButton;
 
-    private GUIStyle labelStyle;
     private LevelData levelData;
     public int levelId;
 
@@ -42,10 +42,6 @@ public class SetRole : MonoBehaviour
 
     void Start()
     {
-        labelStyle = new GUIStyle();
-        labelStyle.fontSize = 32;
-        labelStyle.normal.textColor = Color.white;
-
         levelData = System.Array.Find(GameManager.Instance.levelDataList.levels, level => level.levelId == levelId);
 
         roleDictionary = new Dictionary<AntRole, Role>
@@ -92,10 +88,7 @@ public class SetRole : MonoBehaviour
         
     }
 
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 200, 200), "Role: " + activeRole, labelStyle);
-    }
+ 
 
     private void UpdateButton(Role role)
     {
